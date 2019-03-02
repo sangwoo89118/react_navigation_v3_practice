@@ -5,9 +5,10 @@ import MenuButton from '../MenuButton'
 
 export default class HomeScreen extends Component {
   render() {
+    console.log('inside HomeScreen this.props: ', this.props )
     return (
       <View style={styles.container}>
-        <MenuButton />
+        <MenuButton navigation={this.props.navigation} />
         <Text style={styles.text}>Home</Text>
       </View>
     );

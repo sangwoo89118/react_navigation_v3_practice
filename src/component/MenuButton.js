@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 
-export default class MenuButton extends React.Component {
+export default class MenuButton extends Component {
     render(){
         return(
             <Icon 
@@ -10,7 +10,7 @@ export default class MenuButton extends React.Component {
                 size={32} 
                 color='#000000'
                 style={styles.menuIcon}
-                onPress={() => {console.log('menu button clicked');}}
+                onPress={() => this.props.navigation.toggleDrawer()}
             />
         )
     }
@@ -22,5 +22,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 40,
         left: 20,
+        borderWidth: 0.4,
+        borderColor: '#d6d7da',
     }
 })
